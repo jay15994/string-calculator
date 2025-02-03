@@ -4,6 +4,9 @@
 
 This project is a simple String Calculator application that allows users to perform basic arithmetic operations on strings of numbers.
 
+## Live Demo
+Check out the live demo: [String Calculator](https://jay15994.github.io/string-calculator/)
+
 ## Files
 
 - **index.html**: Contains the HTML structure for the application, including links to the CSS and JavaScript files.
