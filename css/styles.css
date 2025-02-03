@@ -46,3 +46,13 @@ button:hover {
     font-size: 1.2em;
     color: #333;
 }
+
+.error {
+    margin-top: 20px;
+    padding: 10px;
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    font-weight: bold;
+}
