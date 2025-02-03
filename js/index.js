@@ -1,20 +1,20 @@
-const getDelimiter = function(numbers) {
-  if (numbers.startsWith("//")) {
+const getDelimiter = function (numbers) {
+  if (numbers.startsWith('//')) {
     return numbers[2];
   }
-  return ",";
+  return ',';
 };
 
-const getNumbers = function(numbers, delimiter) {
+const getNumbers = function (numbers, delimiter) {
   const newNumbers = numbers.replace(/\\n/g, delimiter);
 
-  if (newNumbers.startsWith("//")) {
+  if (newNumbers.startsWith('//')) {
     return newNumbers.substring(4).split(delimiter);
   }
   return newNumbers.split(delimiter);
-}
+};
 
-const sum = function(numbersArray) {
+const sum = function (numbersArray) {
   let sum = 0;
   const negatives = [];
 
@@ -29,14 +29,14 @@ const sum = function(numbersArray) {
   }
 
   if (negatives.length > 0) {
-    throw new Error("Negatives not allowed: " + negatives.join(", "));
+    throw new Error('Negatives not allowed: ' + negatives.join(', '));
   }
 
   return sum;
-}
+};
 
 function add(numbers) {
-  if (numbers === "") {
+  if (numbers === '') {
     return 0;
   }
 
@@ -46,22 +46,22 @@ function add(numbers) {
   return sum(numbersArray);
 }
 
-$(document).ready(function() {
-  $("#inputString").keypress(function(event) {
+$(document).ready(function () {
+  $('#inputString').keypress(function (event) {
     if (event.which === 13) {
-      $("#calculateButton").click();
+      $('#calculateButton').click();
     }
   });
 
-  $("#calculateButton").click(function() {
+  $('#calculateButton').click(function () {
     try {
-      const input = $("#inputString").val();
+      const input = $('#inputString').val();
       const result = add(input);
-      $("#result").text("Result: " + result)
-                 .removeClass("error");
+      $('#result')
+        .text('Result: ' + result)
+        .removeClass('error');
     } catch (error) {
-      $("#result").text(error.message)
-                 .addClass("error");
+      $('#result').text(error.message).addClass('error');
     }
   });
 });
